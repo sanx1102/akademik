@@ -18,6 +18,8 @@ if (!isset($_SESSION['login']) || $_SESSION['login'] !== TRUE) {
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
 
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
     <style>
         body {
             background: whiteSmoke;
@@ -66,9 +68,11 @@ if (!isset($_SESSION['login']) || $_SESSION['login'] !== TRUE) {
                     </div>
 
                     <div class="ms-auto d-flex align-items-center gap-2">
-                        <a class="btn btn-sm" href="pengguna/profil.php">
-                            <?= htmlspecialchars($_SESSION['nama'] ?? 'Pengguna') ?>
+                        <a class="btn btn-sm d-flex align-items-center gap-2" href="pengguna/edit.php" title="Edit Profil">
+                            <i class="bi bi-person-circle fs-5"></i>
+                            <span><?= htmlspecialchars($_SESSION['nama'] ?? 'Pengguna') ?></span>
                         </a>
+
                         <a href="logout.php" class="btn btn-outline-danger btn-sm">Logout</a>
                     </div>
                 </div>
